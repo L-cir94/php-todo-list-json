@@ -5,23 +5,23 @@ createApp({
     return {
       tasks: null,
       getTasksUrl: "./getTasks.php",
-      taskAdded: "",
+      newTask: "",
       sendTasksUrl: "./sendtasks.php"
     }
   },
   methods: {
     addTask() {
       this.tasks.push({
-        "text": this.taskAdded,
+        "text": this.newTask,
         "done": false
       });
-      this.taskAdded = "";
+      this.newTask = "";
       axios.post(this.sendTasksUrl, this.tasks, {
         headers: { 'Content-Type': 'multipart/form-data' }
       }).then((response) => console.log(response))
     },
-    removeElement(){
-      this.tasks.splice()
+    removeElement(index){
+      this.tasks.splice(index,1)
      },
   },
   mounted() {
