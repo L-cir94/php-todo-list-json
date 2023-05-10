@@ -20,14 +20,15 @@ createApp({
         headers: { 'Content-Type': 'multipart/form-data' }
       }).then((response) => console.log(response))
     },
-    removeElement(index){
-      this.tasks.splice(index,1)
-     },
+    removeElement(index) {
+      this.tasks.splice(index, 1)
+    }
   },
+},
   mounted() {
-    axios.get(this.getTasksUrl)
-      .then(response => {
-        this.tasks = response.data
-      })
-  }
+  axios.get(this.getTasksUrl)
+    .then(response => {
+      this.tasks = response.data
+    })
+}
 }).mount('#app')

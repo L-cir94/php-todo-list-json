@@ -26,7 +26,7 @@
                         <p class="card-text">Aggiungi qualcosa alla tua lista</p>
                     </div>
                     <ul class="list-unstyled">
-                        <li class="py-1" v-for="task in tasks" :class="{'text-decoration-line-through': task.done }"><button class="me-2 my_button" @click="removeElement(index)"><i class="fa-regular fa-trash-can"></i></button>  <button class="me-2 my_button"><i class="fa-solid fa-check"></i></button>{{task.text}}</li>
+                        <li class="py-1" v-for="task in tasks" :class="{'text-decoration-line-through': task.done }"><button class="me-2 my_button" @click="removeElement(index)"><i class="fa-regular fa-trash-can"></i></button>  <button class="me-2 my_button" ><i class="fa-solid fa-check"></i></button>{{task.text}}</li>
                     </ul>
                     <div class="card-footer text-muted">
                         <input type="text" class="w-50" placeholder="Scrivi qui quello che vuoi aggiungere" v-model="newTask" @keyup.enter="addTask()">
